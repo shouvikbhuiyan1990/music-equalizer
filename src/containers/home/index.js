@@ -25,6 +25,11 @@ const Home = ({
   changeRange4,
   changeRange5 }) => (
   <div className="music">
+      <div className="sideNote">
+        <p>+12 db</p>
+        <p>0</p>
+        <p>-12 db</p>
+      </div>
       <Range
       value={range1}
       footnote="60"
