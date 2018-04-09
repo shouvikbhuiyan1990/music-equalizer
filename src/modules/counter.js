@@ -1,95 +1,98 @@
-export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
-export const INCREMENT = 'counter/INCREMENT'
-export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
-export const DECREMENT = 'counter/DECREMENT'
+export const CHANGE_RANGE1_REQUESTED = 'range/CHANGE_RANGE1_REQUESTED';
+export const CHANGE_RANGE2_REQUESTED = 'range/CHANGE_RANGE2_REQUESTED';
+export const CHANGE_RANGE3_REQUESTED = 'range/CHANGE_RANGE3_REQUESTED';
+export const CHANGE_RANGE4_REQUESTED = 'range/CHANGE_RANGE4_REQUESTED';
+export const CHANGE_RANGE5_REQUESTED = 'range/CHANGE_RANGE5_REQUESTED';
 
 const initialState = {
-  count: 0,
-  isIncrementing: false,
-  isDecrementing: false
+  range1 : 0,
+  range2 : 0,
+  range3 : 0,
+  range4 : 0,
+  range5 : 0,
 }
 
 export default (state = initialState, action) => {
+  debugger
   switch (action.type) {
-    case INCREMENT_REQUESTED:
+    case CHANGE_RANGE1_REQUESTED: {
+      debugger
       return {
         ...state,
-        isIncrementing: true
+        range1: action.value
       }
-
-    case INCREMENT:
+    }
+    case CHANGE_RANGE2_REQUESTED: {
       return {
         ...state,
-        count: state.count + 1,
-        isIncrementing: !state.isIncrementing
+        range2: action.value
       }
-
-    case DECREMENT_REQUESTED:
+    }
+    case CHANGE_RANGE3_REQUESTED: {
       return {
         ...state,
-        isDecrementing: true
+        range3: action.value
       }
-
-    case DECREMENT:
+    }
+    case CHANGE_RANGE4_REQUESTED: {
       return {
         ...state,
-        count: state.count - 1,
-        isDecrementing: !state.isDecrementing
+        range4: action.value
       }
+    }
+    case CHANGE_RANGE5_REQUESTED: {
+      return {
+        ...state,
+        range5: action.value
+      }
+    }
 
     default:
       return state
   }
 }
 
-export const increment = () => {
+export const changeRange1 = (event) => {
   return dispatch => {
     dispatch({
-      type: INCREMENT_REQUESTED
-    })
-
-    dispatch({
-      type: INCREMENT
+      type: CHANGE_RANGE1_REQUESTED,
+      value: event.target.value
     })
   }
 }
 
-export const incrementAsync = () => {
+export const changeRange2 = (event) => {
   return dispatch => {
     dispatch({
-      type: INCREMENT_REQUESTED
-    })
-
-    return setTimeout(() => {
-      dispatch({
-        type: INCREMENT
-      })
-    }, 3000)
-  }
-}
-
-export const decrement = () => {
-  return dispatch => {
-    dispatch({
-      type: DECREMENT_REQUESTED
-    })
-
-    dispatch({
-      type: DECREMENT
+      type: CHANGE_RANGE2_REQUESTED,
+      value: event.target.value
     })
   }
 }
 
-export const decrementAsync = () => {
+export const changeRange3 = (event) => {
   return dispatch => {
     dispatch({
-      type: DECREMENT_REQUESTED
+      type: CHANGE_RANGE3_REQUESTED,
+      value: event.target.value
     })
+  }
+}
 
-    return setTimeout(() => {
-      dispatch({
-        type: DECREMENT
-      })
-    }, 3000)
+export const changeRange4 = (event) => {
+  return dispatch => {
+    dispatch({
+      type: CHANGE_RANGE4_REQUESTED,
+      value: event.target.value
+    })
+  }
+}
+
+export const changeRange5 = (event) => {
+  return dispatch => {
+    dispatch({
+      type: CHANGE_RANGE5_REQUESTED,
+      value: event.target.value
+    })
   }
 }
