@@ -7,9 +7,11 @@ import {
   changeRange3,
   changeRange4,
   changeRange5,
+  onMusicEqualizerTypeChanged
 } from '../../modules/counter';
 
 import Range from '../../components/range';
+import Select from '../../components/select';
 
 import './index.css';
 
@@ -19,11 +21,13 @@ const Home = ({
   range3,
   range4,
   range5,
+  isOpen,
   changeRange1,
   changeRange2,
   changeRange3,
   changeRange4,
-  changeRange5 }) => (
+  changeRange5,
+  onMusicEqualizerTypeChanged, }) => (
   <div className="music">
       <div className="sideNote">
         <p>+12 db</p>
@@ -55,6 +59,10 @@ const Home = ({
       footnote="16K"
       onRangeChange={changeRange5}
       />
+      <Select 
+      onSelect={onMusicEqualizerTypeChanged}
+      isOpen={isOpen}
+      />
   </div>
 )
 
@@ -64,6 +72,7 @@ const mapStateToProps = state => ({
   range3 : state.counter.range3,
   range4 : state.counter.range4,
   range5 : state.counter.range5,
+  isOpen : state.counter.isEqOpen,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -72,6 +81,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   changeRange3,
   changeRange4,
   changeRange5,
+  onMusicEqualizerTypeChanged,
 }, dispatch)
 
 export default connect(

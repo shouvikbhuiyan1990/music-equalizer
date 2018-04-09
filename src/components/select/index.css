@@ -1,0 +1,53 @@
+.drop-down-btn {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.btn:hover{
+    background: #3095da;
+    color: #fff;
+}
+
+.btn{
+    background: #3095da;
+    color: #fff;
+}
+
+.display {
+    display: block;
+}
+
+.no-display {
+    display: none;
+}
+
+.btn-group {
+    padding: 0;
+}
+
+.btn-group .btn {
+    border-bottom: none;
+}
+
+.btn-group .btn:first-child {
+    border-top: none;
+}
+
+.btn-group .btn:last-child {
+    border-bottom: 1px solid #000;
+}
+
+button > i {
+    margin-left: 12px;
+}
