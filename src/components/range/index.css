@@ -95,3 +95,51 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #FFB233;
 }
+
+/*red*/
+
+.red:-webkit-slider-runnable-track {
+  background: #ff0000;
+}
+.red:focus::-webkit-slider-runnable-track {
+  background: #ff0000;
+}
+.red::-moz-range-track {
+  background: #ff0000;
+}
+.red::-ms-fill-lower {
+  background: #ff0000;
+}
+.red::-ms-fill-upper {
+  background: #ff0000;
+}
+.red:focus::-ms-fill-lower {
+  background: #ff0000;
+}
+.red:focus::-ms-fill-upper {
+  background: #ff0000;
+}
+
+/*green*/
+
+.green:-webkit-slider-runnable-track {
+  background: green;
+}
+.green:focus::-webkit-slider-runnable-track {
+  background: green;
+}
+.green::-moz-range-track {
+  background: green;
+}
+.green::-ms-fill-lower {
+  background: green;
+}
+.green::-ms-fill-upper {
+  background: green;
+}
+.green:focus::-ms-fill-lower {
+  background: green;
+}
+.green:focus::-ms-fill-upper {
+  background: green;
+}
